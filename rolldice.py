@@ -1,35 +1,38 @@
 import random
 min = 1
 max = 6
-
 d='y'
 name1=input("\nEnter First Player Name : ")
 name2=input("\nEnter Second Player Name : ")
-score1=0
-score2=0
+s=0
+t=0
+u=0
 i=0
-
 while i<6:
     print( "Rolling the dices...")
     print("The values are....")
     c1=random.randint(min, max)
     c2=random.randint(min, max)
-    score1=score1+c1
-    score2=score2+c2
+    if c1>c2:
+        s+=1
+    elif c1<c2:
+        t+=1
+    else:
+        u+=1
     print(c1)
     print(c2)
     i+=1
 
-print(score1)
-print(score2)
-
 
 
 def text_random():
-    min=65
-    max=74
-    ran=random.randint(min, max)
-    print("you got a special character",chr(ran))
+    print("you got a special text gift")
+    cars = ["jehar", "jhakkas", "nice-one" , "you-are-awesome" , "sexy" , "first-class" ,"rocking" ,"lallantop" , "bindaas" ,"mashallah"]
+    min=0
+    max=9
+    n=random.randint(min, max)
+    x = cars[n]
+    print(x)
     
 
 
@@ -115,10 +118,12 @@ def tic_tac_toe(a1):
         print()
 
     
-if score1<score2:
+if s<t:
     print(name2,"wins the match")
     tic_tac_toe(name2)
-else:
+elif s>t:
     print(name1,"wins the match")
     tic_tac_toe(name1)
+else:
+    print("roll dice is draw")
     
